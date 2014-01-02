@@ -41,3 +41,12 @@
 
 # other
 *.iws
+
+/*/build
+ 
+/*/bin
+/*/generated
+*.iml
+/*/*.iml
+*.ipr
+*.iws
