@@ -8,9 +8,11 @@ class BootStrap {
 
     def init = { servletContext ->
         initPaths()
-        File f = new File(Paths.SENTIWORDNET_FILEPATH)
-        InputStream sentiwordData = new FileInputStream(f)
-        insertData(sentiwordData)
+        if (SWNEntry.count == 0) {
+            File f = new File(Paths.SENTIWORDNET_FILEPATH)
+            InputStream sentiwordData = new FileInputStream(f)
+            insertData(sentiwordData)
+        }
     }
 
     private void insertData(FileInputStream existingData) {

@@ -18,6 +18,17 @@ environments {
             url = "jdbc:mysql://localhost/sentiwordnet"
             username = "root"
             password = "root"
+
+            removeAbandoned = "true"
+            removeAbandonedTimeout = "120"
+            logAbandoned = "true"
+            testOnBorrow = "false"
+            testOnReturn = "false"
+            timeBetweenEvictionRunsMillis = "60000"
+            numTestsPerEvictionRun = "5"
+            minEvictableIdleTimeMillis = "30000"
+            testWhileIdle = "true"
+            validationQuery = "select now()"
         }
     }
     test {
@@ -33,6 +44,17 @@ environments {
             url = "jdbc:mysql://localhost/sentiwordnet"
             username = "root"
             password = "root"
+
+            removeAbandoned = "true"
+            removeAbandonedTimeout = "120"
+            logAbandoned = "true"
+            testOnBorrow = "false"
+            testOnReturn = "false"
+            timeBetweenEvictionRunsMillis = "60000"
+            numTestsPerEvictionRun = "5"
+            minEvictableIdleTimeMillis = "30000"
+            testWhileIdle = "true"
+            validationQuery = "select now()"
         }
     }
 }
