@@ -16,4 +16,8 @@ class RestController {
         SWNEntry swnEntry = fetchService.getSWNEntryByTermAndPos(term, pos)
         render swnEntry as JSON
     }
+
+    def getAllTerms() {
+        render fetchService.getAllEntries() as JSON
+    }
 }

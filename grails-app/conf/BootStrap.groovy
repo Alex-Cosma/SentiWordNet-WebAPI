@@ -9,6 +9,7 @@ class BootStrap {
     def init = { servletContext ->
         initPaths()
         File f = new File(Paths.SENTIWORDNET_FILEPATH)
+
         InputStream sentiwordData = new FileInputStream(f)
         insertData(sentiwordData)
     }
@@ -85,7 +86,10 @@ class BootStrap {
     }
 
     void initPaths() {
-        Paths.SENTIWORDNET_FILEPATH = grailsApplication.config.sentiwordnetwebapi.csv.locaiton + grailsApplication.config.sentiwordnetwebapi.csv.filename
+//        Paths.SENTIWORDNET_FILEPATH = grailsApplication.config.sentiwordnetwebapi.csv.locaiton + grailsApplication.config.sentiwordnetwebapi.csv.filename
+
+        Paths.SENTIWORDNET_FILEPATH = grailsApplication.mainContext.getResource("extra/").getFile().getPath() + "/" + grailsApplication.config.sentiwordnetwebapi.csv.filename
+
     }
 
     def destroy = {
