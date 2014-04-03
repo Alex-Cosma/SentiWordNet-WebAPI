@@ -90,7 +90,7 @@ log4j = {
            'net.sf.ehcache.hibernate'
 }
 
-grails.config.locations = ["file:C:\\Users\\alexcosma\\Desktop\\Research\\Project\\config.groovy"]
+grails.config.locations = ["file:" + System.properties['catalina.base'] + "/conf/sentiwordnetapi.groovy"]
 sentiwordnetwebapi.csv.locaiton = "C:\\Users\\alexcosma\\Desktop\\Research\\Project\\"
 sentiwordnetwebapi.csv.filename = "SentiWordNet.txt"
 

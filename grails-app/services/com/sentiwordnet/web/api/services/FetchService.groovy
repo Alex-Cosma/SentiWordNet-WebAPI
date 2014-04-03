@@ -30,6 +30,15 @@ class FetchService {
         return finalEntry
     }
 
+    Map<String, SWNEntry> getAllEntries() {
+        List<SWNEntry> entryList = SWNEntry.list()
+        Map<String, SWNEntry> map = new HashMap<String, SWNEntry>()
+        for (SWNEntry swnEntry : entryList) {
+            map.put(swnEntry.swn_id, swnEntry)
+        }
+        map
+    }
+
     private static SWNEntry extractInfo(List<SWNEntry> entryList) {
         SWNEntry finalEntry = new SWNEntry()
 
@@ -46,4 +55,6 @@ class FetchService {
         }
         finalEntry
     }
+
+
 }
